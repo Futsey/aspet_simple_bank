@@ -51,7 +51,8 @@ public class AccountServiceImpl implements AccountService {
                     "Check accounts names or pin code "
                     + "or sum of transfer is higher then balance on account " + accountFrom + " is");
         }
-        return accountDTOFactory.createAccountDTO(nonNullAccountFrom.get());
+        var dto = accountDTOFactory.createAccountDTO(nonNullAccountFrom.get());
+        return dto;
     }
 
     @Transactional
